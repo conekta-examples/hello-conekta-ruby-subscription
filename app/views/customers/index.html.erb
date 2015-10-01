@@ -1,0 +1,22 @@
+<h2>Crear customer </h2>
+<%= form_tag('/customers') do %>
+  <div class="form-row">
+    <label>
+      <span>Nombre de Cliente</span>
+      <input type="text" size="50" name="customer_name"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Correo del Cliente</span>
+      <input type="email" size="40" name="customer_email"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Teléfono del cliente</span>
+      <input type="text" size="20" name="customer_phone"/>
+    </label>
+  </div>
+  <button type="submit">Crear cliente</button>
+  <% end %>

@@ -1,0 +1,55 @@
+<h2> Revisar Customer </h2>
+<p><%= @customer.inspect %></p>
+
+<h3>Agregar Tarjeta</h3>
+<%= form_tag("/customers/#{@customer.id}", method: :put, id: 'card-form') do %>
+  <span class="card-errors"></span>
+      <span>Nombre del tarjetahabiente</span>
+      <input type="text" size="20" data-conekta="card[name]" value=<%=@customer.name %>/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Número de tarjeta de crédito</span>
+      <input type="text" size="20" data-conekta="card[number]"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>CVC</span>
+      <input type="text" size="4" data-conekta="card[cvc]"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Fecha de expiración (MM/AAAA)</span>
+      <input type="text" size="2" data-conekta="card[exp_month]"/>
+    </label>
+    <span>/</span>
+    <input type="text" size="4" data-conekta="card[exp_year]"/>
+  </div>
+  <button type="submit">Agregar Tarjeta!</button>
+  <% end %>
+
+
+  <h3>Crear Cargo</h3>
+  <%= form_tag("/customers/#{@customer.id}/charge") do %>
+  <div class="form-row">
+    <label>
+      <span>Cargo en Centavos</span>
+      <input type="text" size="10" name="chargeInCents"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>id de card</span>
+      <input type="text" size="10" name="customer_card_id"/>
+    </label>
+  </div>
+  <button type="submit">Cobrar ahora!</button>
+  <% end %>
+
+
+
+<h3>Tarjetas</h3>
+<p> <%= @customer.cards %> </p>
