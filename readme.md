@@ -1,6 +1,6 @@
-## Conekta API 1.0.0 in Rails 4.1
+## Charge on demand with Conekta API 1.0.0 in Rails 4.1
 
-#### This app is an example of how to create a simple payment using Ruby on Rails with Conekta API 1.0.0
+#### This app is an example of how to create a Customer and make charges using Ruby on Rails with Conekta API 1.0.0
 
 To run you need:
 
